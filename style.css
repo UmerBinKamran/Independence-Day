@@ -493,3 +493,73 @@ section,
 .center {
   text-align: center;
 }
+
+/* Mobile Responsiveness*/
+/* Basic navbar styles */
+.navbar {
+  background-color: #006600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: white;
+}
+
+.menu {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
+
+/* Hide the checkbox and hamburger icon on desktop */
+#menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 1.8rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #006600;
+    flex-direction: column;
+    width: 100%;
+    display: none;
+    padding: 1rem 0;
+  }
+
+  /* Show menu when checked */
+  #menu-toggle:checked + .menu-icon + .menu {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}
